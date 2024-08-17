@@ -1,0 +1,110 @@
+.hero-animation {
+    background-image: url(/src/assets/background.jpeg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: 100vw;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    animation: changeBackgroundSize 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
+    -webkit-animation: changeBackgroundSize 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
+    position: fixed;
+}
+
+.text-animation {
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    animation: showTitle 2s forwards;
+    -webkit-animation: showTitle 2s forwards;
+    animation-delay: 2s;
+}
+
+.text-animation p:first-child {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.text-animation p:last-child {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.header-animation {
+    animation: headerAnimation 2s forwards;
+    -webkit-animation: headerAnimation 2s forwards;
+    animation-delay: 2s;
+}
+
+/* animation */
+
+@keyframes showTitle {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes changeBackgroundSize {
+    from {
+        background-size: 200vw;
+    }
+
+    to {
+        background-size: 100vw;
+    }
+}
+
+@keyframes moveHeroAnimation {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: -100vh;
+    }
+}
+
+@keyframes headerAnimation {
+    from {
+        top: -3.5rem
+    }
+
+    to {
+        top: 0
+    }
+}
+
+/* responsive */
+
+@media (max-width: 800px) {
+    @keyframes changeBackgroundSize {
+        from {
+            background-size: 250vh;
+        }
+
+        to {
+            background-size: 150vh;
+        }
+    }
+
+    .hero-animation {
+        background-size: 250vh;
+    }
+}
